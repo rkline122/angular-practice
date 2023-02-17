@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row row row-cols-auto">
+      <div class="col">
+        <div class="board">
+          <ng-container *ngFor="let row of [0, 1, 2, 3, 4, 5]">
+            <div class="row py-2">
+              <ng-container *ngFor="let col of [0, 1, 2, 3, 4, 5, 6]">
+                <div class="col">
+                    <app-cell class="{{colors[board[row][col]]}}" color="lightgrey"></app-cell>
+                  </div>
+              </ng-container>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+  
