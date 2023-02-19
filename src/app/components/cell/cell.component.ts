@@ -7,6 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class CellComponent {
   @Input() color : string = '';
-
+  @Input() rowLocation: number = 0;
+  @Input() colLocation: number = 0;
 
 }

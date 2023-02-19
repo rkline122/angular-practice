@@ -1,14 +1,17 @@
 <div class="container">
-    <div class="row row row-cols-auto">
+
+    <div class="row row-cols-auto">
       <div class="col">
         <div class="board">
-          <ng-container *ngFor="let row of [0, 1, 2, 3, 4, 5]">
+          <ng-container *ngFor="let row of rows">
             <div class="row py-2">
-              <ng-container *ngFor="let col of [0, 1, 2, 3, 4, 5, 6]">
+              <ng-container *ngFor="let col of cols">
                 <div class="col">
                   
-                  <app-cell 
-                    color="lightgrey">
+                  <app-cell
+                    [rowLocation]="cells[row][col].getRowLocation()"
+                    [colLocation]="cells[row][col].getColLocation()"
+                    [color]="cells[row][col].getColor()">
                   </app-cell>
                   
                   <app-button 
