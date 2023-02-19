@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 
 interface NumberArray{
@@ -11,15 +11,11 @@ interface NumberArray{
   styleUrls: ['./grid.component.css']
 })
 export class GridComponent {
-  colors : string[] = ['red', 'yellow']
-  board: NumberArray[] = [
-    [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0],
-  ];
+  @Output() btnClick = new EventEmitter();
+  row : number = 7
+  col : number = 6
 
-
+  onClick(columnNumber : number) {
+    this.btnClick.emit(columnNumber);
+  }
 }

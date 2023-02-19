@@ -7,17 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class CellComponent {
   @Input() color : string = '';
-  active : boolean = false;
 
 
-  toggle(){
-    if(this.active){
-      this.color = 'lightgrey';
-      this.active = false;
-    }else{
-      this.color = 'blue';
-      this.active = true;      
-    }
-
-  }
 }

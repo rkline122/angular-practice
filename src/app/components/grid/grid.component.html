@@ -6,8 +6,19 @@
             <div class="row py-2">
               <ng-container *ngFor="let col of [0, 1, 2, 3, 4, 5, 6]">
                 <div class="col">
-                    <app-cell class="{{colors[board[row][col]]}}" color="lightgrey"></app-cell>
-                  </div>
+                  
+                  <app-cell 
+                    color="lightgrey">
+                  </app-cell>
+                  
+                  <app-button 
+                      *ngIf="row == 5" 
+                      text="{{col}}" 
+                      type="btn-outline-primary" 
+                      (btnClick)="onClick(col)">
+                  </app-button>
+
+                </div>
               </ng-container>
             </div>
           </ng-container>

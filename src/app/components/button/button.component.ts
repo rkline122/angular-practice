@@ -8,6 +8,7 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 export class ButtonComponent {
   @Input() text: string = "";
   @Input() type: string = "";
+  @Input() padding: string = "";
   @Output() btnClick = new EventEmitter();
   constructor() {}
 
