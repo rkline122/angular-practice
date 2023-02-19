@@ -10,7 +10,7 @@ import { cell } from 'src/app/cell';
 
 export class GameComponent {
   player1 = new player(1, 'red');
-  player2 = new player(2, 'blue');
+  player2 = new player(2, 'yellow');
   currentPlayer = this.player1
 
   rows : number[] = [0,1,2,3,4,5]
@@ -20,6 +20,8 @@ export class GameComponent {
 
 
   dropToken(columnNumber : number){
+    this.cells[5][columnNumber].setColor(this.currentPlayer.getTokenColor())
+
     if(this.currentPlayer.getPlayerNumber() == 1){
       this.currentPlayer = this.player2
     }else{
@@ -27,7 +29,6 @@ export class GameComponent {
     }
     console.log(columnNumber)
     console.log(this.cells[0])
-    this.cells[0][0].setColor("black")
   }
 
   createGrid(r: number, c: number, initialCellColor:string): cell[][]{
