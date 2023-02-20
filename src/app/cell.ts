@@ -2,6 +2,7 @@ export class cell{
     private rowLocation : number;
     private colLocation : number;
     private color: string;
+    isEmpty : boolean = true;
 
     public constructor(rowLocation : number, colLocation : number, color : string){
         this.rowLocation = rowLocation;

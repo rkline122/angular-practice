@@ -20,15 +20,29 @@ export class GameComponent {
 
 
   dropToken(columnNumber : number){
-    this.cells[5][columnNumber].setColor(this.currentPlayer.getTokenColor())
+    let topCell = this.cells[0][columnNumber]
+
+    if(topCell.isEmpty){
+        let i = this.rows.length -1
+        let currentCell = this.cells[i][columnNumber]
+
+        while(currentCell.isEmpty == false){
+          currentCell = this.cells[i][columnNumber]
+          i--
+        }
+        currentCell.setColor(this.currentPlayer.getTokenColor())
+        currentCell.isEmpty = false
+
+    }else{
+      console.log("Column full.")
+    }
+    
 
     if(this.currentPlayer.getPlayerNumber() == 1){
       this.currentPlayer = this.player2
     }else{
       this.currentPlayer = this.player1
     }
-    console.log(columnNumber)
-    console.log(this.cells[0])
   }
 
   createGrid(r: number, c: number, initialCellColor:string): cell[][]{
