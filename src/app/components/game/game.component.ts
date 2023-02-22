@@ -23,7 +23,6 @@ export class GameComponent {
 
 
   fourInARow(tokens : string[], tokenColor : string) : boolean{
-    // console.log(tokens)
     let count = 0
 
     for(let i=0; i < tokens.length; i++){
@@ -179,6 +178,14 @@ export class GameComponent {
   endGame(){
     this.gameOver = true
     this.message = `Player ${this.winner} Won!`
+  }
+
+  resetGame(){
+    this.cells = this.createGrid(this.rows.length, this.cols.length, this.cellColor)
+    this.message = ""
+    this.gameOver = false
+    this.currentPlayer = this.player1
+    this.winner = 0
   }
 
 

@@ -17,14 +17,25 @@
                   <app-button 
                       *ngIf="row == 5" 
                       text="{{col}}" 
-                      type="btn-outline-primary" 
-                      (btnClick)="onClick(col)">
+                      type="btn-outline-primary"
+                      [disabled]=gameOver 
+                      (btnClick)="columnNumber(col)"> 
                   </app-button>
+
+            
 
                 </div>
               </ng-container>
             </div>
           </ng-container>
+
+          <app-button 
+            *ngIf="gameOver == true" 
+            text="New Game?" 
+            type="btn-primary" 
+            (btnClick)="reset()"> 
+          </app-button>
+
         </div>
       </div>
     </div>
